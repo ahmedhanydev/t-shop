@@ -1,0 +1,62 @@
+{
+  "name": "t-shop",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@headlessui/react": "^1.7.15",
+    "@heroicons/react": "^2.0.18",
+    "@redux-devtools/extension": "^3.2.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.4.0",
+    "formik": "^2.4.2",
+    "multiselect-react-dropdown": "^2.0.25",
+    "primeicons": "^6.0.1",
+    "primereact": "^9.6.0",
+    "react": "^18.2.0",
+    "react-color": "^2.19.3",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.1",
+    "react-image-gallery": "^1.2.12",
+    "react-multiple-image-input": "^1.0.0",
+    "react-paginate": "^8.2.0",
+    "react-rating-stars-component": "^2.2.0",
+    "react-redux": "^8.1.1",
+    "react-router-dom": "^6.14.1",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^9.1.3",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2",
+    "swiper": "^10.0.4",
+    "unop-react-dropdown": "^0.2.3",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}
