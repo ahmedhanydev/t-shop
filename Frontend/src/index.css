@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* pagination */
+.page-link {
+  /* background-color: #bbbbbb !important; */
+  color: #000 !important;
+  border-radius: 10px !important;
+  border: solid 1px #272727 !important;
+}
+.page-link:hover {
+  background-color: #272727 !important;
+  color: white !important;
+  border: solid 1px 272727 !important;
+}
+
+.page-link {
+  padding: 10px 15px;
+}
+/* end pagination */
+
+/* multi select  */
+
+.searchWrapper {
+  border-radius: 7px !important;
+
+  padding: 10px !important;
+
+  -webkit-border-radius: 7px !important;
+  -moz-border-radius: 7px !important;
+  -ms-border-radius: 7px !important;
+  -o-border-radius: 7px !important;
+}
