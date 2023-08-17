@@ -1,28 +1,27 @@
-# t-shop
+an online store project called T-Shop, which showcases the latest electronic devices. Here are the key details:
 
-An online store that contains everything new in the world of electronic devices
+- Frontend: I utilized TailwindCss, React.js, Axios, and Redux to develop the user interface.
+- Backend: I utilized Node.js, Express.js, Jwt, Nodemailer, and Cloudinary for server-side development.
+- Database: I worked with MongoDB for data storage.
 
-Frontend:  TailwindCss, React.js, Axios,  Redux 
+Features implemented in the project include:
 
-Backend: Node.js, Express.js ,  Jwt, Nodemailer, Cloudinary.
+1. User Interaction: Users can add products to their wishlist or cart, remove items, and make orders using cash or card payments integrated with Stripe.
+2. Coupon System: Users can apply coupons to avail discounts.
+3. Address Management: Users can add, edit, and delete addresses.
+4. Review Management: Users can add, edit, and delete product reviews.
+5. User Profile: Users have the ability to update their profile information.
+6. Advanced Filtering: The store provides filtering options based on category, brand, and price. Additionally, users can search for specific products and utilize sorting and pagination functionalities.
+7. Password Recovery: Users can reset their password through email and verify their identity using a verification code.
+8. Authentication: The system supports user registration and login.
 
-DB: MongoDB
+Furthermore, the project includes an admin dashboard with the following capabilities:
 
-Features : 
-1. User can add products to wishlist or cart or remove these products from they
-2. User can make order cash or by card with payment integration (stripe)
-3. User can apply coupon 
-4. User can add addresses and edit  and delete
-5. User can add review and edit and delete
-6. User can update their profile data
-7. Filter by category or brand or price and Search and Sort and Pagination
-8. Forget password by email and verify using code 
-9. Register and Login 
+1. Order Management: Admins can change the delivery status and payment status of orders.
+2. Product Management: Admins can add, edit, and delete products.
+3. Brand and Category Management: Admins can add and manage brands, categories, and subcategories.
+4. Coupon Management: Admins can add, edit, and delete coupons.
 
-Dashboard :
-1. Admin can change order delivery status and order payment status
-2. Admin can add products and edit  and delete
-3. Admin can add brand and category and subcategory
-4. Admin can add coupons and edit and delete 
+Live demo: https://t-shop-app.vercel.app/
 
-Demo:https://t-shop-app.vercel.app/
+Code : https://github.com/ahmedelgenius/t-shop
