@@ -24,4 +24,4 @@ Furthermore, the project includes an admin dashboard with the following capabili
 
 Live demo: https://t-shop-app.vercel.app/
 
-Code : https://github.com/ahmedelgenius/t-shop
+
