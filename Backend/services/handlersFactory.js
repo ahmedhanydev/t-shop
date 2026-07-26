@@ -33,7 +33,7 @@ exports.getAll = (Model, modelName = "") =>
     const { mongooseQuery, paginationResult } = apiFeatures;
     const documents = await mongooseQuery;
 
-    res.status(201).json({
+    res.status(200).json({
       results: documentsCounts,
       paginationResult,
       data: documents,

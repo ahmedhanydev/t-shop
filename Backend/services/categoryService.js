@@ -59,16 +59,16 @@ exports.getCategories = Factory.getAll(CategoryModel);
 // @route POST /api/v1/categories
 // @access private
 exports.createCategory = asyncHandler(async (req, res) => {
-  // console.log(req.body);
+  // Validate the upload before touching req.file, otherwise a request with no
+  // image throws on `req.file.filename` and surfaces as a 500.
+  if (!req.file) {
+    return res.status(400).json({ message: "no file provided" });
+  }
 
   const imagePath = path.join(__dirname, `../uploads/${req.file.filename}`);
 
   const result = await cloudinaryUploadImage(imagePath);
-  console.log("result", result);
-  // console.log("create is here");
-  if (!req.file) {
-    return res.status(400).json({ message: "no file provided" });
-  }
+
   const { name, nameAr } = req.body;
   const document = await CategoryModel.create({
     name,
