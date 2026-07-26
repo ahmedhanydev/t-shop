@@ -1,0 +1,32 @@
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build: ./Backend
+    container_name: backend-app
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_URI=mongodb://mongo:27017/t-shop
+      # Local development values only — do not reuse in any deployed environment.
+      - JWT_SECRET_KEY=local-dev-secret-not-for-production
+      - EXPIRE_TIME=90d
+    depends_on:
+      - mongo
+
+  frontend:
+    build: ./Frontend
+    container_name: frontend-app
+    ports:
+      - "3000:8080"
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
