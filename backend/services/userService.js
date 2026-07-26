@@ -154,7 +154,7 @@ exports.deleteMe = asyncHandler(async (req, res, next) => {
 exports.activateMe = asyncHandler(async (req, res, next) => {
   const user = await UserModel.findOne({ email: req.body.email });
   if (!user) {
-    return next(new ApiError("not found user"));
+    return next(new ApiError("not found user", 404));
   }
   if (user) {
     await UserModel.findByIdAndUpdate(user._id, { active: true });
