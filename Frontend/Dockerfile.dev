@@ -1,0 +1,28 @@
+
+#  T-shop Frontend Dockerfile for development (create-react-app)
+ARG NODE_VERSION=24.14.0-alpine
+
+FROM node:${NODE_VERSION} AS dev
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN chown -R node:node /app
+
+USER node
+
+# create-react-app's dev server listens on 3000 (not 5173, which is Vite's default).
+EXPOSE 3000
+
+# Bind to all interfaces so the port is reachable from the host, and poll for
+# file changes so hot reload works across a Docker bind mount.
+ENV HOST=0.0.0.0
+ENV WATCHPACK_POLLING=true
+
+# This project is create-react-app: the dev script is "start", not "dev".
+CMD ["npm", "start"]
