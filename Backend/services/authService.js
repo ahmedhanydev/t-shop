@@ -55,7 +55,7 @@ exports.protect = asyncHandler(async (req, res, next) => {
     token = req.headers.authorization.split(" ")[1];
   }
   if (!token) {
-    return next(new ApiError("you are not logged in please login first"));
+    return next(new ApiError("you are not logged in please login first", 401));
   }
   // verify token
   const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
@@ -73,7 +73,10 @@ exports.protect = asyncHandler(async (req, res, next) => {
 
   if (!currentUser.active) {
     return next(
-      new ApiError("your account is not active please active your account")
+      new ApiError(
+        "your account is not active please active your account",
+        403
+      )
     );
   }
   // if password changed
@@ -173,7 +176,7 @@ exports.verifyPassResetCode = asyncHandler(async (req, res, next) => {
   });
 
   if (!user) {
-    return next(new ApiError("reset code is invalid or expired"));
+    return next(new ApiError("reset code is invalid or expired", 400));
   }
 
   user.passwordCodeVerified = true;

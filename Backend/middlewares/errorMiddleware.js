@@ -21,17 +21,20 @@ const sendErrorForProd = (err, res) =>
   });
 
 const globalError = (err, req, res, next) => {
+  // Map JWT failures before branching on environment, otherwise an invalid or
+  // expired token reports 500 in development and 401 in production.
+  if (err.name === "JsonWebTokenError") {
+    err = handlerTokenSignature();
+  }
+  if (err.name === "TokenExpiredError") {
+    err = handlerTokenExpired();
+  }
+
   err.statusCode = err.statusCode || 500;
   err.status = err.status || "error";
   if (process.env.NODE_ENV === "development") {
     sendErrorForDev(err, res);
   } else {
-    if (err.name === "JsonWebTokenError") {
-      err = handlerTokenSignature();
-    }
-    if (err.name === "TokenExpiredError") {
-      err = handlerTokenExpired();
-    }
     sendErrorForProd(err, res);
   }
 };

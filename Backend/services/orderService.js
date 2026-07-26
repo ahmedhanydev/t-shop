@@ -79,7 +79,9 @@ exports.updateOrderToPaid = asyncHandler(async (req, res, next) => {
   const order = await orderModel.findById(req.params.id);
 
   if (!order) {
-    return next(new ApiError(`there is no order with id ${req.params.id}`));
+    return next(
+      new ApiError(`there is no order with id ${req.params.id}`, 404)
+    );
   }
 
   order.isPaid = true;
@@ -97,7 +99,9 @@ exports.updateOrderToDelivered = asyncHandler(async (req, res, next) => {
   const order = await orderModel.findById(req.params.id);
 
   if (!order) {
-    return next(new ApiError(`there is no order with id ${req.params.id}`));
+    return next(
+      new ApiError(`there is no order with id ${req.params.id}`, 404)
+    );
   }
 
   order.isDelivered = true;

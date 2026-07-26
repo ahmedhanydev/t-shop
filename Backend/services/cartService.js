@@ -170,7 +170,7 @@ exports.applyCoupon = asyncHandler(async (req, res, next) => {
     cart.totalAfterDiscount = undefined;
     cart.coupon = undefined;
     await cart.save();
-    return next(new ApiError(`Coupon is invalid or expired`));
+    return next(new ApiError(`Coupon is invalid or expired`, 400));
   }
 
   const totalPrice = cart.totalCartPrice;
