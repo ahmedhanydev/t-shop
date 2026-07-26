@@ -1,6 +1,6 @@
 # Dependencies
-Frontend/node_modules/
-Backend/node_modules/
+frontend/node_modules/
+backend/node_modules/
 
 .pnp
 .pnp.js
@@ -9,10 +9,10 @@ Backend/node_modules/
 coverage/
 
 # Production builds
-Frontend/build/
-Frontend/dist/
-Frontend/.next/
-Frontend/bun.lock
+frontend/build/
+frontend/dist/
+frontend/.next/
+frontend/bun.lock
 
 # Environment variables
 .env
@@ -29,8 +29,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # Backend uploads (user-generated content)
-Backend/uploads/*
-!Backend/uploads/.gitkeep
+backend/uploads/*
+!backend/uploads/.gitkeep
 
 # Editor / IDE
 .vscode/
@@ -45,3 +45,6 @@ Thumbs.db
 # Misc
 text.txt
 *.pem
+
+# Local agent settings
+/.claude
